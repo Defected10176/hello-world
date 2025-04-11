@@ -1,19 +1,24 @@
-public class zzzSortyMcSortface {
-public static void mmmmmain(String[] args){
-int[] wowWut = {5, 2, 9, 1, 5, 6};
-sortEmMaybe(wowWut);
-for(int z=0;z<wowWut.length-1;z++)System.out.print(wowWut[z]+" ");
-}
+public class ArraySorter {
+    public static void main(String[] args) {
+        int[] numbers = {5, 2, 9, 1, 5, 6};
+        sortAscending(numbers);
+        
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+    }
 
-static void sortEmMaybe(int [] meh){
-for(int a = 0; a < meh.length; a++){ // Bug: Should be meh.length - 1
-for(int b=0;b<meh.length;b++){ // Bug: Should be meh.length - a - 1
-if(meh[b]<meh[b+1]){ // Bug: ascending sort needs meh[b] > meh[b+1]
-int x=meh[b];
-meh[b]=meh[b+1];
-meh[b+1]=x;
-}
-}
-}
-}
+    public static void sortAscending(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    // Swap elements
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+    }
 }
